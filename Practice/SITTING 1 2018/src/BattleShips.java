@@ -10,8 +10,7 @@ class BattleShips {
         int y = shot.getY();
         
         char result = grid[y][x];
-
-        if ((x > grid.length) || (y > grid.length)) {
+        if ((x >= grid.length) || (y >= grid.length) || (x < 0) || (y < 0)) {
         	System.out.println(shot.toString() + ": Out of Bounds");
         	return '#';
         }
@@ -57,7 +56,6 @@ class BattleShips {
         		results.add(outcome);
         	}
         }
-        System.out.println(results.toString());
         return results;
     }
 
